@@ -16,7 +16,7 @@ from utils.FmmtLogger import FmmtLogger as logger
 import subprocess
 
 def ExecuteCommand(cmd: list) -> None:
-    subprocess.run(cmd,stdout=subprocess.DEVNULL)
+    subprocess.run(cmd, stdout=subprocess.DEVNULL, shell=True)
 
 class GUIDTool:
     def __init__(self, guid: str, short_name: str, command: str) -> None:
@@ -176,4 +176,3 @@ class GUIDTools:
             raise Exception("Process Failed: is not defined!")
 
 guidtools = GUIDTools()
-
